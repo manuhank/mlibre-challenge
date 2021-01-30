@@ -1,0 +1,12 @@
+@import '../styles/colorPalette';
+nav{
+    display: flex;
+    background-color: $main-color;
+    height: 3.2rem;
+    padding:.5rem;
+    align-items: center;
+    img.logo{
+        object-fit: scale-down;
+        height: 100%;
+    }
+}

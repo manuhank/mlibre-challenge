@@ -1,7 +1,11 @@
+import NavBar from '../components/NavBar'
 import '../styles/globals.scss'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MLibre({ Component, pageProps }) {
+  return <>
+    <NavBar></NavBar>
+    <Component {...pageProps} />
+  </>
 }
 
-export default MyApp
+export default MLibre

@@ -1,3 +1,11 @@
+@import './NavBar.scss';
+@import './Search.scss';
+
 * {
   box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: $gray4;
+  font-family: Arial, sans-serif;
 }
