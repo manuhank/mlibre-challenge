@@ -1,20 +1,25 @@
-import Search from './Search';
-import { useRouter } from "next/router";
+import Search from './Search'
+import { useRouter } from 'next/router'
 
 function NavBar() {
-  const router = useRouter();
+  const router = useRouter()
 
   const navigateSearchPage = (event) => {
-    event.preventDefault();
-    router.push(`/items?search=${event.target["searchQuery"].value}`);
+    event.preventDefault()
+    if (event.target['searchQuery'].value)
+      router.push(`/items?search=${event.target['searchQuery'].value}`)
   }
 
   return (
     <nav>
-      <img className="logo" src="/Assets/Logo_ML@2x.png" alt="mercadolibre"></img>
+      <img
+        className="logo"
+        src="/Assets/Logo_ML@2x.png"
+        alt="mercadolibre"
+      ></img>
       <Search onSearch={navigateSearchPage} />
     </nav>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
