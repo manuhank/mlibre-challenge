@@ -10,6 +10,7 @@ export interface itemDetails {
   // free_shipping: boolean;
   sold_quantity: number
   description: string
+  categories:string[]
 }
 export interface itemDetailsResponse {
   // author: {
@@ -31,6 +32,7 @@ export interface itemInResult {
   condition: string
   free_shipping: boolean
   location: string
+  categories:string[]
 }
 
 export interface searchResult {

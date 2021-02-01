@@ -1,0 +1,13 @@
+@import '../styles/colorPalette';
+.breadcrumb {
+  color: $gray3;
+  margin: 16px 0;
+  .category {
+    &:not(:last-child)::after {
+      content: " > ";
+    }
+    &:last-child {
+      font-weight: bolder;
+    }
+  }
+}

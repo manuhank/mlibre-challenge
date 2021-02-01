@@ -2,18 +2,17 @@
 
 main.item-details {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  margin: 16px 0;
-  justify-content: center;
+  padding: 0 13%;
   section.item-details {
     border-radius: 4px;
-    width: 74%;
     background-color: white;
     display: flex;
     padding: 32px;
-    article{
+    article {
       width: 70%;
-      img.product{
+      img.product {
         object-fit: scale-down;
         border-radius: 4px;
         height: 100%;
@@ -21,34 +20,53 @@ main.item-details {
         max-height: 680px;
         max-width: 680px;
       }
-      h1{
-        font-size:28px;
+      h1 {
+        font-size: 28px;
+        font-weight: lighter;
       }
-      p.descripcion{
-        font-size:16px;
-        color:$gray3;
+      p.descripcion {
+        font-size: 16px;
+        color: $gray3;
       }
     }
-    aside{
-      width:30%;
-      .name{
-        margin-top:16px;
+    aside {
+      width: 30%;
+      .info {
+        font-size: 14px;
       }
-      .price{
-        font-size:46px;
+      .name {
+        margin-top: 16px;
+        font-size: 24px;
+      }
+      .price {
+        font-size: 46px;
         font-weight: lighter;
-        margin:32px 0;
-        sup.cents{
-          font-size: 22px;
+        margin: 32px 0;
+        @media (max-width: 900px) {
+          font-size: 32px;
+        }
+        sup.cents {
+          font-size: 45%;
         }
       }
-      button{
+      button {
         background-color: $accent-color;
-        color:white;
-        border:0;
+        color: white;
+        border: 0;
         border-radius: 4px;
-        height:36px;
-        width:70%;
+        height: 36px;
+        width: 70%;
+      }
+      @media (max-width: 920px) {
+        .info {
+          font-size: 10px;
+        }
+        .name {
+          font-size: 16px;
+        }
+        .price {
+          font-size: 32px;
+        }
       }
     }
   }

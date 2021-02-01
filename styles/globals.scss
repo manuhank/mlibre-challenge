@@ -3,12 +3,14 @@
 @import './SearchPage.scss';
 @import './ItemResult.scss';
 @import './ItemDetails.scss';
+@import './CategoriesBreadcrum.scss';
 
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
+  padding-top: 3.2rem;
   background-color: $gray4;
   font-family: Arial, sans-serif;
 }

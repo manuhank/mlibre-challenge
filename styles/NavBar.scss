@@ -1,6 +1,9 @@
 @import '../styles/colorPalette';
 nav{
     display: flex;
+    position: fixed;
+    top:0;
+    width: 100%;
     background-color: $main-color;
     height: 3.2rem;
     padding:.5rem 13%;

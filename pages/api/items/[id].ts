@@ -1,4 +1,4 @@
-import { getItem, getItemDescription } from '../../../services/mercadolibre'
+import { getCategory, getItem, getItemDescription } from '../../../services/mercadolibre'
 import { itemDetailsResponse } from '../../../types/items'
 export default async (req, res) => {
   try {
@@ -15,6 +15,7 @@ export async function getItemEndpoint(id: string) {
     getItem(id),
     getItemDescription(id),
   ])
+  const {data:category} = await getCategory(item.category_id);
 
   const response: itemDetailsResponse = {
     item: {
@@ -28,6 +29,7 @@ export async function getItemEndpoint(id: string) {
       condition: item.condition,
       sold_quantity: item.sold_quantity,
       description: description.plain_text,
+      categories:category.path_from_root.map(category => category.name),
     },
   }
   return response
