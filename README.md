@@ -13,5 +13,5 @@ Abrir [http://localhost:3000](http://localhost:3000) en el navegador
 
 [Endpoints del API](https://nextjs.org/docs/api-routes/introduction) se encuentran en /api/ y siguen los lineamientos del challenge:
 
--/api/items?q={query:string}
--/api/items/{id:string}
+*/api/items?q={query:string}
+*/api/items/{id:string}
