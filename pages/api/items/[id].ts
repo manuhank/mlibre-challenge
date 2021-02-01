@@ -1,5 +1,5 @@
 import { getItem, getItemDescription } from '../../../services/mercadolibre'
-import { itemDetails } from '../../../types/items'
+import { itemDetailsResponse } from '../../../types/items'
 export default async (req, res) => {
   try {
     const { query } = req
@@ -11,22 +11,22 @@ export default async (req, res) => {
 }
 
 export async function getItemEndpoint(id: string) {
-  const [{ data: searchResult }, { data: description }] = await Promise.all([
+  const [{ data: item }, { data: description }] = await Promise.all([
     getItem(id),
     getItemDescription(id),
   ])
 
-  const response: itemDetails = {
+  const response: itemDetailsResponse = {
     item: {
-      id: searchResult.id,
-      title: searchResult.title,
+      id: item.id,
+      title: item.title,
       price: {
-        currency: searchResult.currency_id,
-        amount: searchResult.price,
+        currency: item.currency_id,
+        amount: item.price,
       },
-      picture: searchResult.thumbnail,
-      condition: searchResult.condition,
-      sold_quantity: searchResult.sold_quantity,
+      picture: item.pictures[0].secure_url,
+      condition: item.condition,
+      sold_quantity: item.sold_quantity,
       description: description.plain_text,
     },
   }
