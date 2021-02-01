@@ -36,6 +36,6 @@ export interface itemInResult {
 }
 
 export interface searchResult {
-  // categories: string[];
+  categories: string[];
   items: itemInResult[]
 }
